@@ -4,6 +4,9 @@ An interactive credit-risk monitoring dashboard built from 5 synthetic bank
 tables, with two embedded AI features: an LLM **"Ask the Portfolio"** assistant
 and **anomaly detection**.
 
+**🔗 Live app:** https://credit-risk-portfolio-analytics-7mhhduvp4f4exfbohmwmou.streamlit.app/
+(opens with no login; the LLM feature is live)
+
 **Python version:** 3.10 (also works on 3.11; the hosted app targets 3.11 on
 Streamlit Community Cloud).
 
