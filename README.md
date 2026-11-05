@@ -33,6 +33,12 @@ The "Ask the Portfolio" feature uses an OpenAI-compatible LLM.
   the real key.
 - Optional overrides: `OPENAI_BASE_URL` (any OpenAI-compatible endpoint) and
   `LLM_MODEL` (default `gpt-4o-mini`).
+- **Using Google Gemini** (via its OpenAI-compatible endpoint) — set all three:
+  ```
+  OPENAI_API_KEY  = <your Gemini API key>
+  OPENAI_BASE_URL = https://generativelanguage.googleapis.com/v1beta/openai/
+  LLM_MODEL       = gemini-flash-latest
+  ```
 
 **If no key is set,** the app still runs. "Ask the Portfolio" switches to a
 deterministic fallback that answers the common questions directly from the same
