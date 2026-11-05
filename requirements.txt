@@ -1,0 +1,10 @@
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.6.0
+xgboost==2.1.4
+shap==0.46.0
+streamlit==1.42.0
+plotly==6.0.0
+openai==1.63.2
+pyarrow==19.0.1
+joblib==1.4.2
