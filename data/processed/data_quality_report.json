@@ -1,0 +1,50 @@
+{
+  "gender_normalisation": {
+    "decision": "Mapped 'M'->'Male' and 'F'->'Female' so the 4 labels collapse to 2.",
+    "labels_before": {
+      "Male": 5341,
+      "Female": 4059,
+      "M": 358,
+      "F": 242
+    },
+    "labels_after": {
+      "Male": 5699,
+      "Female": 4301
+    }
+  },
+  "impute_years_employed": {
+    "decision": "Median-imputed 500 missing values with 3.90; kept years_employed_was_missing flag.",
+    "n_missing": 500,
+    "median": 3.9
+  },
+  "impute_num_dependents": {
+    "decision": "Median-imputed 500 missing values with 1.00; kept num_dependents_was_missing flag.",
+    "n_missing": 500,
+    "median": 1.0
+  },
+  "impute_years_at_residence": {
+    "decision": "Median-imputed 500 missing values with 2.80; kept years_at_residence_was_missing flag.",
+    "n_missing": 500,
+    "median": 2.8
+  },
+  "impute_interest_rate_pct": {
+    "decision": "Imputed 294 missing interest rates with the per-loan_type median (secured vs unsecured price differently); kept missing flag.",
+    "n_missing": 294
+  },
+  "bureau_days_past_due": {
+    "decision": "Filled 689 missing bureau DPD with 0 (interpreted as no delinquency reported at last update).",
+    "n_missing": 689
+  },
+  "join_logic": {
+    "spine": "loan_accounts (grain = account_id, holds target_default)",
+    "joins": [
+      "customers on customer_id (left) - demographic dimension",
+      "bureau aggregates on customer_id (left) - external credit summary",
+      "repayment aggregates on account_id (left) - monthly behaviour",
+      "collections aggregates on account_id (left) - recovery activity"
+    ],
+    "n_accounts": 14685,
+    "n_customers": 10000,
+    "default_rate": 0.1609805924412666
+  }
+}
